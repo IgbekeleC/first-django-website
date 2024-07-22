@@ -11,7 +11,7 @@ class MyUserCreationForm(UserCreationForm):
     email = forms.EmailField()
     instructor = 'instructor'
     student = 'student'
-    customer = 'customer'
+    customer = 'customer' 
     
     usertype = [
         (instructor, 'instructor'),
