@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row my-4">
+    <div class="col-md-6 offset-md-3 p-3 " style="height: 100%;background-color:skyblue; margin-left:10px;">
+        <h3>Add Product</h3>
+        <hr>
+        <form>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-info" type="submit" value="Add">
+        </form>
+    </div>
+</div>
+{% endblock %}

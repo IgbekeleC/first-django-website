@@ -1,0 +1,66 @@
+{% extends 'tuto_main.html' %}{% load static %} {% block content %}
+
+
+<!------------------------Tutorial---------------------------->
+<article class="t-lessons">
+
+    <div class="lesson-row">
+        
+        <div class="lesson-col">
+            <img class="rounded-circle article-image" src="{{object.author.profile.image.url}}">
+            <div class="article-metadata">
+                <a href="{% url 'tutorial-user' object.author.username %}">{{ object.author }}</a>
+                <small>{{ object.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <hr>
+            <h3 class="article-title">{{ object.title }}</a></h3>
+            <img src="{{object.image.url }}" height="300" width="1200">
+             <p class="article-content">{{ object.content }}</p>
+            <br></br>
+            <hr>
+
+            {% if object.author == user %}
+            <div class= "tu-btn-upd">
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'update-tutorial' object.id %}">Update</a>
+            </div>
+            <div class= "tu-btn-del">
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'delete-tutorial' object.id %}">Delete</a>
+            </div>
+        {% endif%}
+        </div>
+    </div>
+</article>
+
+<!--<div class="t-coments">
+
+    <h3>Comments</h3>
+    <br></br>
+    <hr>
+    {% if not post.comments.all %}
+        No comments yet...<a href="#">Add one</a>
+    {% else %}
+
+        <a href="#">Add Comment</a>
+
+        <br></br>
+
+        {% for comment in post.comments.all %}
+            <stron>
+                {{ comment.user}} -  
+                {{ comment.date_posted }}
+            </stron>
+
+            <br></br>
+            {{ comment.body}}
+        {% endfor %}
+        
+        <br></br>
+        <a href="#">Add Comment</a>
+
+        
+    {% endif %}
+
+</div>-->
+
+
+{% endblock content %}

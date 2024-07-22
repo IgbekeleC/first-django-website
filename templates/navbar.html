@@ -1,0 +1,77 @@
+{% load static %}
+    <!------------------------Header---------------------------->
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="{% static 'images/logo.PNG' %}" alt="image"></a>
+            <div class="title">
+                <h1>MICB TECHNOLOGY</h1>
+            </div>
+           
+            <div class="nav-links" id="navLinks"> 
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li class="active"><a href="{% url 'home' %}"><span>HOME</span></a></li>
+                    <li><a href=""><span>ABOUT</span></a>
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="{% url 'team-mgt' %}">Profile/Management</a></li>
+                                <li><a href="">Partners</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href=""><span>SERVICES</span></a>
+
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="{% url 'web-design' %}">Web Design & Development</a></li>
+
+                                <li class="hover-me"><a href="{% url 'bus-dev' %}">Business Development</a>
+                                
+                                </li>
+                                <li class="hover-me"><a href="{% url 'market-sales' %}">Marketing & Sales</a>
+
+                            </ul>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'dashboard' %}"><span>RESOURCES</span></a>
+                    {% else %}
+                    <li><a href="{% url 'login' %}"><span>RESOURCES</span></a>
+                    </li>
+                    {% endif %}
+                    <li><a href="{% url 'website-blog' %}"><span>BLOG</span></a></li>
+                    <li><a href="{% url 'contact' %}"><span>CONTACT</span></a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}"><span>PROFILE</span></a> </li>
+                    <li><a href="{% url 'logout' %}"><span>LOGOUT</span></a> </li>
+                    {% else %}
+                    <li><a href="{% url 'register' %}"><span>REGISTER</span></a> </li>
+                    <li><a href="{% url 'login' %}"><span>LOGIN</span></a> </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i> 
+
+            {% if user.is_authenticated %}
+            <div class="user-log"><span>
+                <img src="{{ user.profile.image.url }}" width="40px" height="40px" >
+                <h6>{{ user.username }}</h6>
+                <small>{{ user.usertype }}</small>
+                </span>
+            </div>
+            {% else %}
+            <div class="user-log"><span>
+                <img src="{% static 'images/avatar.svg' %}" width="40px" height="40px">
+                </span>
+            </div>
+            {% endif %}
+
+        </nav>
+        {% for message in messages %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+
+        {% endfor %}
+
+    </section>

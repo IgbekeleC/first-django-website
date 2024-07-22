@@ -1,0 +1,12 @@
+{% extends 'main.html' %} {% block content %}
+
+<div class="lo-container">
+    <h2>You have successfully logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            You can continue from the homepage or <a href="{% url 'login' %}">Login Again</a>
+            </small>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'blog_main.html' %}{% load static %} {% block content %}
+<!------------------------Blog---------------------------->
+<article class="blog-content">
+    <div class="blog-cap">
+        <img src="{% static 'images/blog2.png' %}" alt="image">
+        <h1>Satisfy Your Curiosity</h1>
+    </div>
+
+    <div class="blog-row">
+
+        
+        <div class="blog-post">
+            <img class="rounded-circle article-image" src="{{object.author.profile.image.url}}">
+            <a href="{% url 'user_blog-post' object.author.username %}">{{ object.author }}</a>
+            <small>{{ object.date_posted|date:"F d, Y" }}</small><hr>
+            <br></br>
+
+            <h2 class="article-title">{{ object.title }}</h2>
+            <img src="{{object.header_image.url }}" height="300" width="1300">
+            <br></br>
+            <p class="article-content">{{object.content }}</p>
+        </div>
+        <hr>
+        <div class="article-metadata">
+
+            {% if object.author == user %}
+                <div class= "sp-btn-u">
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+                </div>
+                <div class= "sp-btn-d">
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                </div>
+            {% endif%}
+        </div>
+    </div>
+</article>
+
+{% endblock content %}

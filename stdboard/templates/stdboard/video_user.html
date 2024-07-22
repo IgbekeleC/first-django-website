@@ -1,0 +1,27 @@
+{% extends 'videomain.html' %}{% load static %} {% block content %}
+
+
+
+
+<div class="v-lessons">
+
+    <div class="vlesson-row">
+        <div class="vlesson-col">
+            <h3 class="mb-3">Videos By {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h3>
+            {% for x in video %}
+            <h3 class ="text-center mt-2 mb-2"><a href="{% url 'video-detail' object.id %}">{{ video.caption }}</h3>
+            <!------class="video-fluid" could be used too---->
+            <video class="embed-responsive embed-responsive-16by9" controls="controls">
+                <source src="{{ x.video.url }}" type="video/MP4">
+                <p>{{video.video}}</p>
+                <br></br>
+                <a href="#">{{ view.kwargs.username }}({{ page_obj.paginator.count }})</a> - 
+                <small>{{ video.date_posted|date:"F d, Y" }}</small>
+            </video>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

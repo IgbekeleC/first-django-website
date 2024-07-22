@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.t-lessons {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    padding-top: 100px;
+}
+
+.lesson-row {
+    margin-top: 5%;
+    display: block;
+    justify-content: space-between;
+}
+
+.lesson-col {
+    flex-basis: 60%;
+    border: solid 1px rgb(184, 124, 240);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.rounded-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+/*.lesson-col img {
+    width: 100%;
+    border-radius: 10px;
+}*/
+
+.lesson-col p {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.lesson-col h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.t-coments {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+}
+
+.tu-btn-upd {
+    display: inline-block;
+    list-style: none;
+    background-color: limegreen;
+    width: 75px;
+    border: solid 1px #000000;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.tu-btn-del {
+    display: inline-block;
+    list-style: none;
+    background-color: #ff0000;
+    width: 75px;
+    border: solid 1px #000000;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+/*--------------------mobile device------------------*/
+
+@media(max-width: 700px) {
+    .rounded-circle img {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+    .tutorial-post-image img {
+        width: 410px;
+        height: 150px;
+    }
+}

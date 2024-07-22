@@ -1,0 +1,362 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="{% static 'styles/resource.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+  
+    <title>Learning Resources</title>
+</head>
+
+<body>
+
+    {% block content %}{% block sidebar %}
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <img src="{% static 'images/logo.PNG' %}" width="30px" height="30px" alt="image">
+            <h2><span class="#"></span>MICB TECHNOLOGY</h2>
+        </div>
+        <div class="sidebar-menu">
+
+            <div class="menu">
+                <div class="item">
+                    <a href="" class="active"><span class="fas fa-desktop"></span>
+                            <span>Dashboard</span></a>
+                </div>
+                <div class="item">
+                    <a class="sub-btn"><i class="fas fa-user"></i>Student<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        
+                        <a href="{% url 'tutorial' %}" class="sub-item">Tutorials</a>
+                        <a href="{% url 'video' %}" class="sub-item">Video Courses</a>
+                         <!--<a href="#" class="sub-item">Discussion Forum</a>
+                        <a href="#" class="sub-item">Courses</a>
+                        <a href="#" class="sub-item">Test/Quizes</a>
+                        <a href="#" class="sub-item">Announcements</a>
+                        <a href="#" class="sub-item">Results</a>
+                        <a href="#" class="sub-item">Profile</a>-->
+                    </div>
+                </div>
+                {% if request.user.is_instructor %}
+                <div class="item">
+                    <a class="sub-btn"><i class="fas fa-chalkboard-user"></i>Tutor<i class="fas fa-angle-right dropdown"></i></a>
+                    <!--<div class="sub-menu">
+                        <a href="#" class="sub-item">Courses</a>
+                        <a href="#" class="sub-item">Tutorial</a>
+                        <a href="#" class="sub-item">Test/Quizes</a>
+                        <a href="#" class="sub-item">Announcements</a>
+                        <a href="#" class="sub-item">Results</a>
+                        <a href="#" class="sub-item">Discussion Forum</a>
+                        <a href="#" class="sub-item">Profile</a>
+                    </div>-->
+                </div>
+                {% endif %}
+               
+                <div class="item">
+                    <a class="sub-btn"><i class="fa-solid fa-user-group"></i>Clients<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="{% url 'gallery-products' %}" class="sub-item">Products</a>
+                        <a href="" class="sub-item">Make Order</a>
+                        <a href="" class="sub-item">My Account Summary</a>
+                    </div>
+                </div>
+            
+                {% if request.user.is_admin or request.user.is_staff %}
+                <div class="item">
+                    <a class="sub-btn"><i class="fas fa-cogs"></i>Admin<i class="fas fa-angle-right dropdown"></i></a>
+                  <!-- <div class="sub-menu">
+                        <a href="#" class="sub-item">Learners</a>
+                        <a href="#" class="sub-item">Instructors</a>
+                        <a href="#" class="sub-item">Courses</a>
+                        <a href="#" class="sub-item">Announcements</a>
+                        <a href="#" class="sub-item">Blog Posts</a>
+                        <a href="#" class="sub-item">Settings</a>
+                        <a href="#" class="sub-item">Profile</a>
+                    </div>-->
+                </div>
+                {% endif %}
+
+                {% if request.user.is_admin or request.user.is_staff %}
+                <div class="item">
+                    <a href=""><span class="fas fa-receipt"></span>
+                            <span>Projects</span></a>
+                </div>
+
+                <div class="item">
+                    <a href=""><span class="fas fa-calculator"></span>
+                            <span>Accounts</span></a>
+                </div>
+                <div class="item">
+                    <a href=""><span class="fas fa-bar-chart-o"></span>
+                            <span>Statistics</span></a>
+                </div>
+                {% endif %}
+
+            </div>
+            <div class="sidebar-nav-pg">
+                <div class="btn">
+                    <a href="{% url 'gallery-products' %}" class="hero-btn">Products</a>
+                    <a href="" class="hero-btn">Orders</a>
+                    <a href="" class="hero-btn">Support </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-content">
+        <header>
+
+                   <!--Header-->
+
+            <section class="header">
+                <nav>
+
+                    <div class="nav-links" id="navLinks">
+                        <i class="fa fa-times" onclick="hideMenu()"></i>
+                        <ul>
+                            <li class="active"><a href="{% url 'home' %}">HOME</a></li>
+                            <li><a href="#">ABOUT</a>
+                                <div class="sub-menu-1">
+                                    <ul>
+                                        <li><a href="{% url 'team-mgt' %}">Profile/Management</a></li>
+                                        <!--<li><a href="team.html">Team</a></li>-->
+                                        <li><a href="">Partners</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">SERVICES</a>
+
+                                <div class="sub-menu-1">
+                                    <ul>
+                                        <li><a href="{% url 'web-design' %}">Web Design & Development</a></li>
+
+                                        <!---<li class="hover-me"><a href="{% url 'app-dev' %}">Apps Development</a>
+                                  
+                                        </li>---->
+                                        <li class="hover-me"><a href="{% url 'bus-dev' %}">Business Development</a>
+                                         
+                                        </li>
+                                        <li class="hover-me"><a href="{% url 'market-sales' %}">Marketing & Sales</a>
+                                
+                                        </li>
+                                        <!---<li class="hover-me"><a href="training.html">Training</a></li>---->
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="">RESOURCES</a></li>
+                            <li><a href="{% url 'website-blog' %}">BLOG</a></li>
+                            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}">PROFILE</a> </li>
+                            <li><a href="{% url 'logout' %}">LOGOUT</a> </li>
+                            {% else %}
+                            <li><a href="">REGISTER</a> </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <i class="fa fa-bars" onclick="showMenu()"></i>
+                    {% if user.is_authenticated %}
+                    <div class="user-log"><span>
+                        <img src="{{ user.profile.image.url }}" width="40px" height="40px">
+                        <h6>{{ user.username }}</h6>
+                        <small>{{ user.usertype }}</small>
+                        </span>
+                    </div>
+                    {% else %}
+                    <div class="user-log"><span>
+                        <img src="{% static 'images/avatar.svg' %}" width="40px" height="40px"  >
+                        </span>
+                    </div>
+                    {% endif %}
+                </nav>
+
+
+            </section>
+        </header>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="aler alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+        <main>
+            <div class="cards">
+                <div class="card-single">
+                    <div>
+                        <h1>94</h1>
+                        <span>Students</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-users"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>12</h1>
+                        <span>Instructors</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-chalkboard-user"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>108</h1>
+                        <span>Projects</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-receipt"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>42</h1>
+                        <span>Orders</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-clipboard-list"></span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>A Great Place To Start</h3>
+                            <!--<button>See all <span class="fas fa-arrow-right"></span> </button>-->
+                        </div>
+                        <div class="card-header">
+                            <p>Ready to learn? Navigate to 'Student' tab at the left side bar.
+                                 Click on any of the learning resources to start learning.</p>
+                        </div>
+                        <div class="card-body">
+                            <table width="100%">  
+                                <thead>
+                                    <img src="{% static 'images/newpic1.png' %}" width="100%">
+                                </thead>
+                            </table>
+                            <div class="card-body">
+                                <div class="table-responsive">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    
+                    <table width="100%"> 
+                        <h3>Product List</h3>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Category</td>
+                                <td>Quantity</td>                   
+                            </tr> 
+                        </thead>
+                        <tbody>
+                            {% for product in product %}
+                            <tr>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.category }}</td>
+                                <td>{{ product.quantity }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Our Projects</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>Projects</td>
+                                        <td>Number</td>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Logo Design</td>
+                                            <td>26</td>          
+                                        </tr>
+                                        <tr>
+                                            <td>Web Design</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web Development</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content Management</td>
+                                            <td>37</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Support</td>
+                                            <td>7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Others</td>
+                                            <td>8</td>
+                                        </tr>
+                                    </tbody>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+        </main>
+
+    </div>
+    {% endblock sidebar %}
+    {% endblock content %}
+
+                <!-- JavaScript for Toggle Menu -->
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //jquery for toggle sub menu
+            $('.sub-btn').click(function() {
+                $(this).next('.sub-menu').slideToggle();
+
+            });
+        });
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+
+</body>
+
+</html>

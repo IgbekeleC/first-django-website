@@ -1,0 +1,16 @@
+{% block title %}Edit Products{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row my-4">
+    <div class="col-md-6 offset-md-3 p-3 bg-white">
+        <h3>Edit Item</h3>
+        <hr>
+        <form>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-info" type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
+{% endblock %}

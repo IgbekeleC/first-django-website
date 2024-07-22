@@ -1,0 +1,241 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="{% static 'styles/resource.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+  
+    <title>Learning Resources</title>
+</head>
+
+<body>
+
+    {% block content %}{% block sidebar %}
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <img src="{% static 'images/logo.PNG' %}" width="30px" height="30px" alt="image">
+            <h2><span class="#"></span>MICB TECHNOLOGY</h2>
+        </div>
+        <div class="sidebar-menu">
+
+            <div class="menu">
+                <div class="item">
+                    <a href="" class="active"><span class="fas fa-desktop"></span>
+                            <span>Dashboard</span></a>
+                </div>
+            </div>
+            <div class="sidebar-nav-pg">
+                <div class="btn">
+                    <a href="{% url 'gallery-products' %}" class="hero-btn">Products</a>
+                    <a href="" class="hero-btn">Orders</a>
+                    <a href="" class="hero-btn">Support </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-content">
+        <header>
+
+                   <!--Header-->
+
+            <section class="header">
+                <nav>
+
+                    <div class="nav-links" id="navLinks">
+                        <i class="fa fa-times" onclick="hideMenu()"></i>
+                        <ul>
+                            <li class="active"><a href="{% url 'home' %}">HOME</a></li>
+                            <li><a href="#">ABOUT</a>
+                                <div class="sub-menu-1">
+                                    <ul>
+                                        <li><a href="{% url 'team-mgt' %}">Profile/Management</a></li>
+                                        <!--<li><a href="team.html">Team</a></li>-->
+                                        <li><a href="">Partners</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">SERVICES</a>
+
+                                <div class="sub-menu-1">
+                                    <ul>
+                                        <li><a href="{% url 'web-design' %}">Web Design & Development</a></li>
+
+                                        <!---<li class="hover-me"><a href="{% url 'app-dev' %}">Apps Development</a>
+                                  
+                                        </li>---->
+                                        <li class="hover-me"><a href="{% url 'bus-dev' %}">Business Development</a>
+                                         
+                                        </li>
+                                        <li class="hover-me"><a href="{% url 'market-sales' %}">Marketing & Sales</a>
+                                
+                                        </li>
+                                        <!---<li class="hover-me"><a href="training.html">Training</a></li>---->
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="">RESOURCES</a></li>
+                            <li><a href="{% url 'website-blog' %}">BLOG</a></li>
+                            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+
+                            {% if request.user.is_admin or request.user.is_staff %}
+                            <li><a href="{% url 'customers' %}">Customers</a> </li>
+                            <li><a href="{% url 'product_add' %}">Add New Product</a> </li>
+                            {% endif %}
+                            {% if request.user.is_staff or request.user.is_customer %}
+                            <li><a href="{% url 'order' %}">Make Order</a> </li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}">PROFILE</a> </li>
+                            <li><a href="{% url 'logout' %}">LOGOUT</a> </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <i class="fa fa-bars" onclick="showMenu()"></i>
+                    {% if user.is_authenticated %}
+                    <div class="user-log"><span>
+                        <img src="{{ user.profile.image.url }}" width="40px" height="40px"  >
+                        <h6>{{ user.username }}</h6>
+                        <small>{{ user.usertype }}</small>
+                        </span>
+                    </div>
+                    {% else %}
+                    <div class="user-log"><span>
+                        <img src="{% static 'images/avatar.svg' %}" width="40px" height="40px" alt="image" >
+                        </span>
+                    </div>
+                    {% endif %}
+
+                </nav>
+
+
+            </section>
+        </header>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="aler alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+        <main>
+            <div class="cards">
+                <div class="card-single">
+                    <div>
+                        <h1>94</h1>
+                        <span>Prucducts</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-users"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>12</h1>
+                        <span>Customers</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-chalkboard-user"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>108</h1>
+                        <span>Projects</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-receipt"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>42</h1>
+                        <span>Orders</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-clipboard-list"></span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>A Great Place To Start</h3>
+                            <!--<button>See all <span class="fas fa-arrow-right"></span> </button>-->
+                        </div>
+                        <div class="card-body">
+                    
+                            <table width="100%"> 
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Category</td>
+                                        <td>Quantity</td>
+                                        <td>Activity</td>
+                                    </tr> 
+                                </thead>
+                                <tbody>
+                                    {% for product in product %}
+                                    <tr>
+                                        <td>{{ product.name }}</td>
+                                        <td>{{ product.category }}</td>
+                                        <td>{{ product.quantity }}</td>
+                                        {% if request.user.is_admin or request.user.is_staff %}
+                                        <td>
+                                            <a class="btn btn-info btn-sm mr-2"
+                                                href="{% url 'gallery-product-edit' product.id %}">Edit</a>
+                                            <a class="btn btn-danger btn-sm ml-2"
+                                                href="{% url 'gallery-products-delete' product.id %}">Delete</a>
+                                        </td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <div class="card-body">
+                                <div class="table-responsive">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </main>
+
+    </div>
+    {% endblock sidebar %}
+    {% endblock content %}
+
+                <!-- JavaScript for Toggle Menu -->
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //jquery for toggle sub menu
+            $('.sub-btn').click(function() {
+                $(this).next('.sub-menu').slideToggle();
+
+            });
+        });
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script

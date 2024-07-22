@@ -1,0 +1,82 @@
+{% extends 'tuto_main.html' %}
+{% load crispy_forms_tags %}
+{% load static %} {% block content %}
+
+<div class="t-lessons">
+
+    <div class="lesson-row">
+        {% for post in posts %}
+        <div class="lesson-col">
+            <img class="rounded-circle article-image" src="{{post.author.profile.image.url}}">
+            <h3 class="article-title"><a href="{% url 'tutorial-detail' post.id %}">{{ post.title }}</a></h3>
+            <div class="tutorial-post-image">
+                <img src="{{post.image.url }}" height="300" width="1200">
+            </div>
+            <br></br>
+             <p class="article-content">{{ post.content }}</p>
+            <br></br>
+            <div class="article-metadata">
+                <a href="{% url 'tutorial-user' post.author.username %}">{{ post.author }}</a> - 
+                <small>{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div> 
+</div>
+
+
+<!--<div class="t-coments">
+
+    <h3>Comments</h3>
+    <br></br>
+    <hr>
+    {% if not post.comments.all %}
+        No comments yet...<a href="#">Add one</a>
+    {% else %}
+
+    {% for comment in post.comments.all %}
+        <stron>
+            {{ comment.user|capfirst }}-  
+            {{ comment.date_posted }}
+        </stron>
+
+        <br></br>
+        {{ comment.content}}
+    {% endfor %}
+    {% endif %}-->
+    <!--{{ comment.count }} Comment  {{ comments|pluralize }}
+    {% for comment in comments %}
+    <blockquote class="blockquote">
+        <p class="mb-0">{{ comment.content}}</p>
+        <footer class="blockquote-footer">by<cite title="Source Title">{{comment.user|capfirst}}</cite></footer>
+    </blockquote>
+    {% endfor %}
+
+</div>-->
+
+
+
+                        <!--------Pagination------>
+
+{% if is_paginated %}
+    {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
+    {% endif %}
+
+{% endif %}
+
+{% endblock content %}

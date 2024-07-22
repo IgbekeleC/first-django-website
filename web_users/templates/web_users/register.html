@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %} {% block content %}
+
+<div class="mx-auto" style="width: 100%; background-color:skyblue">
+    <form method="POST" >
+        {% csrf_token %}
+        <fieldset class="form-group">
+        
+            <legend class="border-bottom mb-5" style="margin-top: 20px"><h1>Registration Form</h1></legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="media">
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        </div>
+
+        <div class="form-group">  
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+        </small>
+    </div>
+
+</div>
+{% endblock content %}

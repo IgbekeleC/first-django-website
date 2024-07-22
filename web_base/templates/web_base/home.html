@@ -1,0 +1,213 @@
+{% extends 'main.html' %}{% load static %} {% block content %}
+
+             <!--banner Slide Shows-->
+<div class="banner">
+    <div class="banner1">
+        <img src="{% static 'images/slide-1.jpeg' %}" alt="image">
+        <div class="text-box text-box1">
+            <h1>We deliver Software and Marketing Solutions. We Meet
+                Your Business Needs for Innovation and Automation...</h1>
+                <div class="banner-btn">
+                    <a href="{% url 'web-design' %}" class="hero-btn">Learn More</a>
+                </div>
+            <!--<span></span>-->
+            <p></p>
+        </div>
+    </div>
+    <div class="banner2">
+        <img src="{% static 'images/slide-2.jpeg' %}" alt="image">
+        <div class="text-box text-box2">
+            <h1>We deliver Software and Marketing Solutions. We Meet
+                Your Business Needs for Innovation and Automation...</h1>
+            <!--<span></span>-->
+            <p></p>
+            <div class="banner-btn">
+                <a href="{% url 'web-design' %}" class="hero-btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!------------------------Services---------------------------->
+<div class="services">
+    <h1>Services</h1>
+
+    <div class="serv-col">
+        <h3>Web Design & Development</h3>
+        <p>The dream of every business is to attain to a level where customers could access its products and services regardless of its location. </p>
+        <div class="serv-col-row">
+            <div class="row-webd">
+                <p>Thanks to advancement in technology; this is now possible for all businesses with the use of website. With our experienced creative designers and developers, you ‘d connect your business to the world with a functional and responsive website
+                    .
+                </p>
+                <img src="{% static 'images/content_DE.png' %}" alt="image">
+            </div>
+            <div class="row-webd">
+                <img src="{% static 'images/sample_Des.png' %}" alt="image">
+                <p> At MICB-Tech, we design your website with latest technologies that give your customers the user-experience they deserve while ensuring maximum security.We have mastererd the art of creative design and we give your website the beautiful
+                    look it deserves.We bring your story to live and to the world of sight.</p>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="{% url 'web-design' %}" class="hero-btn">Read More</a>
+        </div>
+    </div>
+
+
+    <div class="serv-col">
+        <h3>Apps Development</h3>
+
+        <div class="serv-col-row">
+            <div class="row-webd">
+                <p>We specialize in the creation, design and building both desktop and mobile applications customized to your business. With our experienced software engineers, we design all your web apps with a friendly user-interface, agile architectures
+                    and framework to provide you and your customers with best experience.</p>
+                <img src="{% static 'images/app_n2.jpg' %}" alt="image">
+            </div>
+            <div class="row-webd">
+                <img src="{% static 'images/wb.jpg' %}" alt="image">
+                <p>We ‘ll design a unique responsive and secure application customized to your needs and that of your business.Our team is made up of experienced, skillful and talented individuals. You will always feel a touch of professionalism in our works
+                    and your interaction with any of our team members.
+                </p>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="{% url 'web-design' %}" class="hero-btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="serv-col">
+        <h3>Business Development</h3>
+        <p>With our marketing research, we gain insight into your business, the industry and your business sector. We write your business plan and provide recommendations that drive your business forward.</p>
+        <img src="{% static 'images/pexels-christina-morillo-1181355.jpg' %}" alt="image">
+        <div class="btn">
+            <a href="{% url 'bus-dev' %}" class="hero-btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="serv-col">
+        <h3>Sales , Marketing and Research</h3>
+        <p>We are unique at MICB Tech: we have learned the secret of combining the act of sales, marketing and research with technology in a way that seems inseparable. This is the basis for the existence of MICB – our desire is to assist every business
+            to achieve their growth objective with minimal cost.</p>
+        <div class="serv-col-row">
+            <div class="row-webd-s">
+                <h4>Sales</h4>
+                <img src="{% static 'images/pexels-pixabay-261909.jpg' %}" alt="image">
+                <p>We remove the hassles of where and how to sell or who will buy your products. We also give you feedback on what people think about your brand</p>
+            </div>
+            <div class="row-webd-s">
+                <h4>Marketing</h4>
+                <img src="{% static 'images/sales_pic.png' %}" alt="image">
+                <p>We promote your products through in-person-discussions,our social media platforms and get these products across to buyers (retailers and wholesalers). You may want to hear what our clients have to say about us.</p>
+            </div>
+            <div class="row-webd-s">
+                <h4>Research</h4>
+                <img src="{% static 'images/pexels-monstera-9480118.png' %}" alt="image">
+                <p>Our marketing team is made up of marketing professionals who have successfully combined their sales, marketing and research experiences with their technological skills.
+                </p>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="{% url 'market-sales' %}" class="hero-btn">Read More</a>
+        </div>
+    </div>
+
+
+    <div class="serv-col">
+        <h3>Trainings</h3>
+        <p>Stand out among the crowd by learning business skills that will fast-track your progress. We also organize trainings on technical skills such as basic computer programming, use of Microsoft office and tools, and much more. You can also benefit
+            from several of our on-demand trainings that are personalized to individual needs. All our training programs are designed to make you relevant and find your place in the business world or in the society.</p>
+        <img src="{% static 'images/train2a.png' %}" alt="image">
+        <div class="btn">
+            <a href="{% url 'bus-dev' %}" class="hero-btn">Read More</a>
+        </div>
+    </div>
+
+
+</div>
+<!------------------------Core Values---------------------------->
+<div class="core-value">
+    <h1>Why MICB Tech</h1>
+    <p>As a growing technology-based company, MICB Tech is highly priced among those who have a taste of our services. We derived our continue success stories from the following key values used by several clients to describe our existence:</p>
+    <div class="row">
+        <div class="core-col">
+            <h3>Excellence</h3>
+            <img src="{% static 'images/val_1.png' %}" alt="image">
+
+            <p>As part of our values, we deliver exceptional services to our clients. We work to be happy, and we are happy only when our clients are happy. One way to have a first-hand experience of how we measure up is to give us a chance. You may also
+                want to hear what our clients say about us and our services.</p>
+        </div>
+        <div class="core-col">
+            <h3>Professionalism</h3>
+            <img src="{% static 'images/val_2.png' %}" alt="image">
+
+            <p>Our team is made up of experienced, skillful and talented individuals. You will always feel a touch of professionalism in our works and your interaction with any of our team members.</p>
+        </div>
+        <div class="core-col">
+            <h3>Integrity</h3>
+            <img src="{% static 'images/val_3.png' %}" alt="image">
+
+            <p>At MICB Tech, we value commitment and that is why “every statement” we make “is a promise” - we deliver to expectation. We pride on effective communications and keep you updated from start to finish. Quality and timelines are keys to our deliverable.
+                We started and we remain because we are trusted.</p>
+        </div>
+        <div class="core-col">
+            <h3>Customer-centric</h3>
+            <img src="{% static 'images/val_4.png' %}" alt="image">
+
+            <p>We are in business because we want to create the best experience possible for our customers. Every decision we make is with a focus to please our customers first. We smile only when our clients are excited</p>
+        </div>
+    </div>
+</div>
+<!------------------------Testimonials---------------------------->
+<div class="hero-slider-testimonial">
+    <div class="slide-row">
+        <h1>Testimonial</h1>
+        <div class="slide-col slide-col-1">
+            <div class="test-img">
+                <img src="{% static 'images/tm-1.png' %}" alt="image">
+            </div>
+            <div class="test-box test-text-1">
+                <p><i class="fa fa-quote-left" fa-3x></i> MICB team has delivered beyond our expectation. They worked in close collaboration with us to understand our requirements,and were able to hit every detail and delivered a great desktop application
+                    which we now use to monitor our customers’ activities with us. Auxilium Global will certainly continue working with them and we highly recommend them to others <i class="fa fa-quote-right"></i></p>
+                <h3>Suleman Wahab</h3>
+                <span></span>
+                <h6>CEO, Auxillum Global</h6>
+            </div>
+        </div>
+        <div class="slide-col slide-col-2">
+            <div class="test-img">
+                <img src="{% static 'images/tm-2.png' %}" alt="image">
+            </div>
+            <div class="test-box test-text-2">
+                <p><i class="fa fa-quote-left" fa-3x></i> MICB is a company that with time has proven to be a reliable plug for top quality service execution and delivery in the marketing world. I have partnered with MICB Ventures since 2018, and it’s been
+                    a smooth ride with regular marketing supplies and need I say they’re also consistent with their service delivery. I recommend that you patronize them today <i class="fa fa-quote-right"></i></p>
+                <h3>Christopher Nwobodo</h3>
+                <span></span>
+                <h6>Self-employed</h6>
+            </div>
+        </div>
+        <div class="slide-col slide-col-3">
+            <div class="test-img">
+                <img src="{% static 'images/tm-3.png' %}" alt="image">
+            </div>
+            <div class="test-box test-text-3">
+                <p><i class="fa fa-quote-left" fa-3x></i> I will like to appreciate MICB for the service being render at the appropriate time. At times their price may be on the high side but the quality of their services is incomparable. I will like to
+                    suggest that they should keep on the good work <i class="fa fa-quote-right"></i></p>
+                <h3>Esther Okufuye</h3>
+                <span></span>
+                <h6>Director of Nursing Services,<br> Ireifeidunnu Maternity Home.</h6>
+            </div>
+        </div>
+        <div class="slide-col slide-col-4">
+            <div class="test-img">
+                <img src="{% static 'images/tm-4.png' %}" alt="image">
+            </div>
+            <div class="test-box test-text-4">
+                <p><i class="fa fa-quote-left" fa-3x></i> MICB is a reputable company that deals in marketing and supply of different kinds of genuine products. For me, I will say that their service delivery is a top notch <i class="fa fa-quote-right"></i>                    </p>
+                <h3>Chika Orji</h3>
+                <span></span>
+                <h6>MD, Destined Chidon Stores.</h6>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

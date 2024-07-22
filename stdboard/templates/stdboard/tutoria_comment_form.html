@@ -1,0 +1,17 @@
+{% load crispy_forms_tags %} {% block content %}
+
+<div class="mx-auto " style="width: 90%">
+    <form method="POST" >
+        {% csrf_token %}
+        <fieldset class="form-group">
+        
+            <legend class="border-bottom mb-5" style="margin-top: 20px">Comment</legend>
+            {{ t_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-success" type="submit", value="Submit"> Post Comment</button>
+        </div>
+    </form>
+
+</div>
+{% endblock content %}

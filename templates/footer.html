@@ -1,0 +1,71 @@
+{% load crispy_forms_tags %}{% load static %}
+<!------------------------Social Media ---------------------------->
+<div class="social-m-icon">
+    <h2> Follow Us</h2>
+    <div class="s-m-icons">
+        <a href="https://www.facebook.com/micbtech/"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com/MICBTech/"><i class="fa fa-twitter"></i></a>
+        <i class="fa fa-youtube-play"></i>
+        <a href="https://www.instagram.com/micbtech/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.telegram.com/micbtech/"><i class="fa fa-telegram"></i></a>
+        <i class="fa fa-linkedin"></i>
+    </div>
+</div>
+<!------------------------Footers---------------------------->
+
+<div class="footer-container">
+    <div class="footer">
+        <div class="footer-heading footer-1">
+            <h2>Features</h2>
+            <a href="{% url 'team-mgt' %}">About Us</a>
+            <a href="{% url 'bus-dev' %}">Training</a>
+            <a href="">Partners</a>
+            <a href="{% url 'website-blog' %}">Blog</a>
+            <a href="https://www.privacypolicies.com/live/98a523a8-adf9-4b5e-8906-cfeaf2ccea52">Privacy Policy</a>
+        </div>
+        <div class="footer-heading footer-2">
+            <h2>Resources</h2>
+            <a href="{% url 'dashboard' %}">Wep Apps</a>
+            <a href="">Mobile Apps</a>
+            <a href="">Ebooks</a>
+            <a href="">Demo</a>
+            <a href="{% url 'terms-and-conditions' %}">Terms and Conditions</a>
+        </div>
+        <div class="footer-heading footer-3">
+            <h2>Contact Us</h2>
+            <a href="">Jobs</a>
+            <a href="">Supports</a>
+            <a href="">Sponsorship</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+        <div class="footer-heading footer-4">
+            <h2>Social Media</h2>
+            <a href="https://www.instagram.com/micbtech/">Instagram</a>
+            <a href="https://www.facebook.com/micbtech/">Facebook</a>
+            <a href="#">Youtube</a>
+            <a href="https://www.twitter.com/MICBTech/">Twitter</a>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <form class="footer-email-form" method="POST">
+                    {% csrf_token %}
+                    <h2>Subscribe To Our Newsletter</h2>
+                    {{form|crispy}}
+                    <!---<input type="email" placeholder="Enter your email address" id="footer-email">-->
+                    <input class="btn btn-info btn-block" type="submit" value="Subscribe" id="footer-email-btn">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="whatsapp-icon">
+        <a href="https://api.whatsapp.com/send?phone=2348156670901"><i class="fa fa-whatsapp"></i></div>
+    </div>-->
+
+    <div class="footer-heading footer-4">
+        <h6><i class="fa fa-copyright"></i> 2021 MICB-TECH LTD. All rights reserved</h6>
+
+        <!---<i class="fa fa-whatsapp"></i>-->
+    </div>
+
+</div>

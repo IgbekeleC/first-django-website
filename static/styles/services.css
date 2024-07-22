@@ -1,0 +1,680 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+/*---------------------------Web Design Service-------------------------------------*/
+
+.web-design {
+    width: 96%;
+    margin: auto;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.web-design-row-1 {
+    width: 100%;
+    margin-top: 10px;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.web-design-row-2 {
+    /*width: 100%;*/
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    /*background-color: #fff3f3;*/
+    padding-top: 10px;
+}
+
+.web-design-row-3 {
+    /*width: 100%;*/
+    margin-top: 10px;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    /*background-color: #fff3f3;*/
+    padding-top: 10px;
+}
+
+.web-design-col-1 {
+    flex-basis: 20%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    text-align: left;
+}
+
+.web-design-col-1 h2 {
+    background-color: rgb(125, 118, 223);
+    text-align: center;
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 15px;
+    padding-top: 2px;
+    height: 40px;
+    width: 350px;
+    transition: all 0.4s ease-out;
+}
+
+.web-design-col-1 h2:hover {
+    background-color: #2bab0d;
+    border: 1px solid #fff;
+    transition: all 0.4s ease-out;
+}
+
+.web-design-col-2 {
+    flex-basis: 34%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    padding: 10px;
+    text-align: left;
+}
+
+.web-design-col-3 {
+    flex-basis: 34%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    padding: 10px;
+    text-align: left;
+}
+
+.web-design-col-1 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.web-design-col-2 img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.web-design-col-3 img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.web-design-col p {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.web-design h1 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.web-design-col-2 p {
+    padding: 0;
+    margin-top: 5px;
+    width: 350px;
+}
+
+.web-design-col-3 p {
+    padding: 0;
+    margin-top: 5px;
+    width: 350px;
+}
+
+.web-design-col h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.web-design-col-2 h4 {
+    background-color: rgb(125, 118, 223);
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+    height: 40px;
+    width: 350px;
+    transition: all 0.4s ease-out;
+}
+
+.web-design-col-2 h4:hover {
+    background-color: #2bab0d;
+    border: 1px solid #fff;
+    transition: all 0.4s ease-out;
+}
+
+.web-design-col-3 h4 {
+    background-color: rgb(125, 118, 223);
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+    height: 40px;
+    width: 350px;
+    transition: all 0.4s ease-out;
+}
+
+.web-design-col-3 h4:hover {
+    background-color: #2bab0d;
+    border: 1px solid #fff;
+    transition: all 0.4s ease-out;
+}
+
+@media(max-width: 700px) {
+    .web-design-row-2 {
+        flex-direction: column;
+        padding-left: 50px;
+    }
+    .web-design-row-3 {
+        flex-direction: column;
+        padding-left: 50px;
+    }
+}
+
+
+/*---------------------------App Development Sevices-------------------------------------*/
+
+.banner-app-dev {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.banner-app-dev-1 img {
+    width: 120%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoom-out 3s linear infinite;
+}
+
+.banner-app-dev-2 img {
+    width: 120%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoom-out 3s linear infinite;
+}
+
+@keyframes zoom-out {
+    100% {
+        width: 100%;
+    }
+}
+
+.banner-app-dev-1 {
+    animation: slide1 12s linear infinite;
+}
+
+.banner-app-dev-2 {
+    animation: slide2 12s linear infinite;
+}
+
+.app-dev {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.app-dev h1 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+
+/*---------------------------Business Development Sevices-------------------------------------*/
+
+.banner-bus-dev {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.banner-bus-dev-1 img {
+    width: 120%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoom-out 3s linear infinite;
+}
+
+.banner-bus-dev-2 img {
+    width: 120%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoom-out 3s linear infinite;
+}
+
+@keyframes zoom-out {
+    100% {
+        width: 100%;
+    }
+}
+
+.banner-bus-dev-1 {
+    animation: slide1 12s linear infinite;
+}
+
+.banner-bus-dev-2 {
+    animation: slide2 12s linear infinite;
+}
+
+.bus-dev {
+    width: 95%;
+    margin: auto;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.bus-dev h1 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.bus-dev-row-1 {
+    margin-top: 10px;
+    display: flex;
+    border-radius: 10px;
+    background-color: #fff3f3;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.bus-dev-col-1 {
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.bus-dev-col-1 h3 {
+    background-color: rgb(125, 118, 223);
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+    height: 40px;
+    width: 370px;
+    transition: all 0.4s ease-out;
+}
+
+.bus-dev-col-1 h3:hover {
+    background-color: #2bab0d;
+    border: 1px solid #fff;
+    transition: all 0.4s ease-out;
+}
+
+.bus-dev-col-1 p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.bus-dev-col-1 img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.bus-dev-row-2 {
+    margin-top: 10px;
+    display: flex;
+    border-radius: 10px;
+    background-color: #fff3f3;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.bus-dev-col-2 {
+    flex-basis: 23.3%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.bus-dev-col-2 h4 {
+    background-color: rgb(125, 118, 223);
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+    height: 40px;
+    width: 280px;
+    transition: all 0.4s ease-out;
+}
+
+.bus-dev-col-2 h4:hover {
+    background-color: #2bab0d;
+    border: 1px solid #fff;
+    transition: all 0.4s ease-out;
+}
+
+.bus-dev-col-2 p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.bus-dev-col-2 img {
+    width: 95%;
+    border-radius: 10px;
+}
+
+
+/*---------------------------Marketing and Sales-------------------------------------*/
+
+.marketing-container {
+    width: 95%;
+    margin: auto;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.marketing-container h2 {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.marketing-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.market-item-col {
+    flex-basis: 19%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    background-color: #fff3f3;
+    padding: 10px;
+}
+
+.market-item-col img {
+    width: 95%;
+    border-radius: 20px;
+}
+
+.market-item-col p {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/*.market-item-col h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}*/
+
+.market-item-col h3 {
+    background-color: rgb(125, 118, 223);
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+    height: 40px;
+    width: 230px;
+    transition: all 0.4s ease-out;
+}
+
+.market-item-col h3:hover {
+    background-color: #2bab0d;
+    border: 1px solid #fff;
+    transition: all 0.4s ease-out;
+}
+
+@media(max-width: 700px) {
+    .marketing-row {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .market-item-col {
+        padding-left: 25px;
+    }
+}
+
+
+/*---------------------------Contact Form for Sales-------------------------------------*/
+
+.sales-contact-form {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 130vh;
+    justify-content: space-between;
+}
+
+.marketing-card-info {
+    flex-basis: 35%;
+    width: 350px;
+    padding-top: 30;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgb(247, 134, 60);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.sales-contact-container {
+    flex-basis: 50%;
+    max-width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.sales-contact-title {
+    margin-top: 50px;
+    color: black;
+    text-transform: uppercase;
+    transition: all 4s ease-in-out;
+}
+
+.sales-contact-title h1 {
+    font-size: 25px;
+    margin-top: 1px;
+    text-align: center;
+    color: #2bab0d;
+}
+
+.sales-contact-title h2 {
+    font-size: 16px;
+}
+
+@media(max-width: 700px) {
+    .marketing-card-info {
+        width: 150px;
+    }
+    .sales-contact-container {
+        max-width: 400px;
+    }
+    .sales-contact-title h1 {
+        font-size: 18px;
+    }
+    .sales-contact-title h2 {
+        font-size: 12px;
+    }
+    .marketing-card-info h1 {
+        font-size: 18px;
+    }
+    .form-group label {
+        font-size: 12px;
+    }
+    button {
+        width: 300px;
+        height: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+
+/*--------------CSS fo Contact page---------------*/
+
+.banner-contact {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-contact img {
+    width: 100%;
+}
+
+.contact-contact {
+    width: 97%;
+    margin: 20px;
+    padding-top: 30px;
+    height: 130vh;
+    justify-content: space-between;
+}
+
+.contact-card-info {
+    flex-basis: 90%;
+    width: 400px;
+    padding-top: 30;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgb(247, 134, 60);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+/*---------------------------Contact Form for Other Services-------------------------------------*/
+
+.contact-form {
+    margin-bottom: 20px;
+    height: 130vh;
+    width: 80%;
+    background-color: aliceblue;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.contact-title {
+    margin-top: 100px;
+    color: black;
+    text-transform: uppercase;
+    transition: all 4s ease-in-out;
+}
+
+.contact-title h2 {
+    font-size: 16px;
+}
+
+.form-group {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-family: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    margin-top: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 8px;
+    font-family: montserrat;
+    color: rgb(27, 166, 247);
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .3s ease background-color;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(214, 226, 236);
+}
+
+#status {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+#status.success {
+    background-color: rgb(211, 250, 153);
+    animation: status 4s ease forwards;
+}
+
+#status.error {
+    background-color: rgb(250, 129, 92);
+    color: #fff;
+    animation: status 4s ease forwards;
+}
+
+@keyframes status {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    90% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

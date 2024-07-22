@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.v-lessons {
+    width: 99%;
+    margin: auto;
+    text-align: left;
+    padding-top: 100px;
+    padding-right: 20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.vlesson-row {
+    display: flex;
+    width: 96%;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+
+
+/*.vlesson-col {
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    text-align: left;
+}*/
+
+.embed-responsive {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/*.rounded-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}*/
+
+
+/*d-flex {
+    position: absolute;
+    display: flex;
+    object-fit: fill;
+    border-radius: 10px;
+    min-width: 200px;
+    min-height: 200px;
+    padding: 20px;
+}*/
+
+h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.v-coments {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+}
+
+.v-btn-upd {
+    display: inline-block;
+    list-style: none;
+    background-color: limegreen;
+    width: 75px;
+    border: solid 1px #000000;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.v-btn-del {
+    display: inline-block;
+    list-style: none;
+    background-color: #ff0000;
+    width: 75px;
+    border: solid 1px #000000;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+}

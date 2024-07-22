@@ -1,0 +1,120 @@
+{% extends 'tuto_main.html' %}{% load static %} {% block content %}
+
+<div class="t-lessons">
+
+    <div class="lesson-row">
+        <div class="lesson-col">
+            <h3 class="mb-3">Posts By {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h3>
+            {% for post in posts %}
+            <div class="tuto-post">
+                <img class="rounded-circle article-image" src="{{post.author.profile.image.url}}">
+                <div class="article-metadata">
+                    <a href="{% url 'tutorial-user' post.author.username %}">{{ post.author }}</a>
+                    <small>{{ post.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2 class="article-title"><a href="{% url 'tutorial-detail' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="lesson-col">
+            <a href="#">
+                <h3>Business</h3>
+                <img src="{% static 'images/val_2.png' %}"" alt="image">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </a>
+        </div>
+        <div class="lesson-col">
+            <a href="#">
+                <h3>Research</h3>
+                <img src="{% static 'images/val_3.png' %}"" alt="image">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.p>
+            </a>
+        </div>
+
+    </div>
+    <div class="lesson-row">
+        {% for post in posts %}
+        <div class="lesson-col">
+            <h3><a href="#">{{ post.title }}</a></h3>
+             <img src="{{ post.thumbnail_url }}">
+            <p>{{post.content}}</p>
+            <br></br>
+            <a href="#">{{ post.author }}</a> - 
+            <small>{{ post.date_posted|date:"F d, Y" }}</small>
+        </div>
+        {% endfor %}
+
+        
+    </div>
+    <div class="lesson-row">
+        <div class="lesson-col">
+            <h3 class="mb-3">Posts By {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h3>
+            {% for post in posts %}
+            <div class="blog-post">
+                <img class="rounded-circle article-image" src="{{post.author.profile.image.url}}">
+                <div class="article-metadata">
+                    <a href="{% url 'tutorial-user' post.author.username %}">{{ post.author }}</a>
+                    <small>{{ post.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2 class="article-title"><a href="{% url 'tutorial-detail' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="lesson-col">
+            <h3 class="mb-3">Posts By {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h3>
+            {% for post in posts %}
+            <div class="blog-post">
+                <img class="rounded-circle article-image" src="{{post.author.profile.image.url}}">
+                <div class="article-metadata">
+                    <a href="{% url 'tutorial-user' post.author.username %}">{{ post.author }}</a>
+                    <small>{{ post.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2 class="article-title"><a href="{% url 'tutorial-detail' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="lesson-col">
+            <h3 class="mb-3">Posts By {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h3>
+            {% for post in posts %}
+            <div class="blog-post">
+                <img class="rounded-circle article-image" src="{{post.author.profile.image.url}}">
+                <div class="article-metadata">
+                    <a href="{% url 'tutorial-user' post.author.username %}">{{ post.author }}</a>
+                    <small>{{ post.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2 class="article-title"><a href="{% url 'tutorial-detail' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+                        
+                                <!--------Pagination------>
+
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
+        {% endif %}
+
+    {% endif %}
